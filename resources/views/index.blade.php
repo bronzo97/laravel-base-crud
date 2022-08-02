@@ -9,5 +9,9 @@
         <a href="{{ route("comics.show", $comic->id) }}" class="btn">Show</a>
     @endforeach
 
+    <div>
+        <a href="{{ route('comics.create') }}" class="btn">Aggiungi</a>
+    </div>
+
     
 @endsection
