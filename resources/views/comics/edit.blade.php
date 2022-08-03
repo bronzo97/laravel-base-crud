@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section("page_content")
-    <form action="{{ route("comics.store") }}" method="post">
+    <form action="{{ route("comics.update", $comic->id) }}" method="post">
     @csrf
+    @method('PATCH')
         
         <div>
             <label for="titleInput">Titolo fumetto</label>

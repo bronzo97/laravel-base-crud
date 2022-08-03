@@ -99,7 +99,19 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $data = $request->validate([
+            "title" => "required|min:5|max:255",
+        ]);
+
+        /* $faq->title = $data["title"];
+        $faq->text = $data["text"];
+        $faq->save(); */
+
+        $comic->update($data);
+
+        return redirect()->route("comics.show", $comic->id);
     }
 
     /**
