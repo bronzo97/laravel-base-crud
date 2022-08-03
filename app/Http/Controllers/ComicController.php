@@ -41,7 +41,24 @@ class ComicController extends Controller
 
         $newComic = new Comic();
         $newComic->fill($data);
+
+        $newComic->fillable($data['title']);
+        $newComic->fillable($data['description']);
+        $newComic->fillable($data['price']);
+        $newComic->fillable($data['series']);
+        $newComic->fillable($data['type']);
+        $newComic->fillable($data['sale_date']);
+        
         $newComic->save();
+
+
+
+        // $newComic->title = $data[ 'title'];
+        // $newComic->description = $data[ 'description'];
+        // $newComic->price = $data[ 'price'];
+        // $newComic->series = $data[ 'series'];
+        // $newComic->type = $data[ 'type'];
+        // $newComic->sale_date = $data[ 'sale_date'];
 
         return redirect()->route("comics.show", $newComic->id);
     }
