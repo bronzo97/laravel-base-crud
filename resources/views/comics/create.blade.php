@@ -31,7 +31,7 @@
 
         <div>
             <label for="saleDateInput">Data di vendita fumetto</label>
-            <input type="date" name="title" id="saleDateInput" placeholder="Data di vendita Fumetto">
+            <input type="date" name="sale_date" id="saleDateInput" placeholder="Data di vendita Fumetto">
         </div>
 
         <div>
@@ -41,4 +41,6 @@
 
 
     </form>
+
+    
 @endsection
