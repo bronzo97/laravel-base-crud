@@ -42,15 +42,15 @@ class ComicController extends Controller
         $newComic = new Comic();
         $newComic->fill($data);
 
-        $newComic->fillable($data['title']);
-        $newComic->fillable($data['description']);
-        $newComic->fillable($data['price']);
-        $newComic->fillable($data['series']);
-        $newComic->fillable($data['type']);
-        $newComic->fillable($data['sale_date']);
-        
+
         $newComic->save();
 
+        // $newComic->fillable($data['title']);
+        // $newComic->fillable($data['description']);
+        // $newComic->fillable($data['price']);
+        // $newComic->fillable($data['series']);
+        // $newComic->fillable($data['type']);
+        // $newComic->fillable($data['sale_date']);
 
 
         // $newComic->title = $data[ 'title'];
@@ -75,7 +75,6 @@ class ComicController extends Controller
 
         return view("comics.show", [
             "comic" => $comic
-        
         ]);
 }
 
@@ -85,9 +84,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        // $comic = Comic::findOrFail($id);
+        return view("comics.edit", compact("comic"));
     }
 
     /**
