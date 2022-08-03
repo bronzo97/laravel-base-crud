@@ -35,7 +35,7 @@
         </div>
 
         <div>
-            <button type="submit" class="btn">Salva</button>
+            <button type="submit" class="btn">Modifica</button>
             <a href="{{ route('comics.index') }}" class="btn">Annulla</a>
         </div>
 
